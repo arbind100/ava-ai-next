@@ -1,79 +1,39 @@
-'use client';
-import React, { useState } from 'react';
+// app/page.tsx
 
-export default function Page() {
-  const [tier, setTier] = useState('starter');
-  const [topic, setTopic] = useState('');
-  const [output, setOutput] = useState('');
-  const [loading, setLoading] = useState(false);
+import Link from 'next/link';
 
-  const mockOutput = `📌 Strategy for your topic:
+export default function Home() { return ( <main className="min-h-screen bg-black text-white font-sans px-6 py-10"> <h1 className="text-4xl md:text-6xl font-bold text-center mb-8"> Meet <span className="text-pink-500">AVA</span>: Your Beyond-Human Strategist </h1>
 
-🎙️ *10 Podcast Questions:*
-1. What inspired you to start?
-2. What was your biggest failure?
-...
+<p className="text-center max-w-3xl mx-auto mb-12 text-lg text-gray-300">
+    AVA isn't just AI. It's your personal strategist — capable of generating ideas, plans, and insights
+    far beyond human thinking. Built for creators, founders, and visionary brands.
+  </p>
 
-📢 *3 Viral Hooks:*
-- \"What if everything you know about X is wrong?\"
-- \"In just 30 seconds, this changed my mindset.\"
-
-🧠 *Content Calendar (Week 1):*
-- Monday: Micro clip
-- Tuesday: Behind the scenes
-...`;
-
-  const generateStrategy = () => {
-    if (!topic) return alert('Enter a topic or guest name.');
-    setLoading(true);
-    setTimeout(() => {
-      setOutput(mockOutput);
-      setLoading(false);
-    }, 1500);
-  };
-
-  return (
-    <main style={{ padding: 24, maxWidth: 600, margin: '0 auto', color: 'white', fontFamily: 'sans-serif' }}>
-      <h1 style={{ fontSize: 28, textAlign: 'center', marginBottom: 20 }}>AVA: Your AI Strategist</h1>
-
-      <div style={{ display: 'flex', justifyContent: 'center', gap: 8, marginBottom: 16 }}>
-        {['starter', 'pro', 'ava+'].map((t) => (
-          <button
-            key={t}
-            onClick={() => setTier(t)}
-            style={{
-              padding: '8px 12px',
-              borderRadius: 8,
-              backgroundColor: tier === t ? '#ED2647' : 'transparent',
-              color: 'white',
-              border: '1px solid white'
-            }}
-          >
-            {t.toUpperCase()}
-          </button>
-        ))}
+  <section className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {plans.map((plan) => (
+      <div key={plan.name} className="border border-pink-500 rounded-2xl p-6 shadow-lg hover:scale-105 transition-all">
+        <h2 className="text-2xl font-semibold mb-2 text-pink-400">{plan.name}</h2>
+        <p className="text-gray-300 text-sm mb-4">{plan.description}</p>
+        <ul className="text-sm text-gray-200 list-disc list-inside space-y-1 mb-4">
+          {plan.features.map((feature, idx) => (
+            <li key={idx}>{feature}</li>
+          ))}
+        </ul>
+        <p className="text-xl font-bold text-pink-500">{plan.price}</p>
+        <Link
+          href="https://formspree.io/f/your-form-id"
+          target="_blank"
+          className="mt-4 inline-block bg-pink-500 hover:bg-pink-600 text-white font-medium py-2 px-4 rounded-xl"
+        >
+          Order Now
+        </Link>
       </div>
+    ))}
+  </section>
+</main>
 
-      <textarea
-        placeholder='Enter podcast topic or guest name'
-        value={topic}
-        onChange={(e) => setTopic(e.target.value)}
-        style={{ width: '100%', minHeight: 100, padding: 12, borderRadius: 8, backgroundColor: '#111', color: 'white', border: '1px solid white' }}
-      />
+); }
 
-      <button
-        onClick={generateStrategy}
-        disabled={loading}
-        style={{ width: '100%', marginTop: 12, padding: 12, backgroundColor: '#ED2647', color: 'white', borderRadius: 8, fontWeight: 'bold' }}
-      >
-        {loading ? 'Generating...' : 'Generate Strategy'}
-      </button>
+const plans = [ { name: 'Starter Plan', price: '$49', description: 'For smart podcasters, indie creators, and rising YouTubers.', features: [ 'Guest Intelligence Scanner', 'Viral Interview Engine', '7-Day AI Content Calendar', 'Mini Hook Oracle', 'Value Ladder Suggestion' ] }, { name: 'Pro Plan', price: '$129', description: 'For personal brands or founders scaling intelligently.', features: [ 'Includes Starter Plan features', 'Persona Analyzer', 'Content Mindmap AI', 'Mini Brand OS', '1-Minute Positioning Statement', 'Audience Archetype Clustering' ] }, { name: 'AVA+ Plan', price: '$299', description: 'For elite creators, startup CEOs, thought-leaders.', features: [ 'Includes Pro Plan features', 'Custom GPT Clone', 'Market Sentiment Simulator', 'Client Mirror Report', 'AI Monetization Hacker', 'Growth Model Inverter', 'Dream Avatar Generator' ] } ];
 
-      {output && (
-        <div style={{ marginTop: 20, backgroundColor: '#222', padding: 16, borderRadius: 8, whiteSpace: 'pre-wrap' }}>
-          {output}
-        </div>
-      )}
-    </main>
-  );
-}
+
