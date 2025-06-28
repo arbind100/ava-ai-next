@@ -1,3 +1,4 @@
+// THIS IS A FRESH VERSION – NO ADDITIONS ABOVE THIS LINE
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center bg-black text-white px-4 py-12">
