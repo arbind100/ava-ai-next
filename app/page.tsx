@@ -1,5 +1,21 @@
 export default function Home() {
   return (
+    {/* Hero Section */}
+<section className="w-full py-20 bg-gradient-to-b from-black to-gray-900 text-center text-white px-4">
+  <h1 className="text-4xl md:text-5xl font-bold mb-4">
+    AVA AI — The Smartest Brain for Creators & Startups
+  </h1>
+  <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mt-4">
+    Built by AI. Trained on strategy. Delivered like lightning.  
+    <br />This isn't an agency — this is future intelligence.
+  </p>
+  <div className="mt-6">
+    <span className="inline-block bg-blue-600 px-4 py-2 rounded-lg text-sm font-semibold">
+      100% Human-Augmented AI · No Guessing · Just Results
+    </span>
+  </div>
+</section>
+
     <main className="flex min-h-screen flex-col items-center justify-center bg-black text-white px-4 py-12">
       <h1 className="text-4xl font-bold mb-10 text-center">
         ⚡ AVA AI Services
@@ -61,22 +77,7 @@ export default function Home() {
           </button>
         </div>
       </section>
-      {/* Hero Section */}
-<section className="w-full py-20 bg-gradient-to-b from-black to-gray-900 text-center text-white px-4">
-  <h1 className="text-4xl md:text-5xl font-bold mb-4">
-    AVA AI — The Smartest Brain for Creators & Startups
-  </h1>
-  <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mt-4">
-    Built by AI. Trained on strategy. Delivered like lightning.  
-    <br />This isn't an agency — this is future intelligence.
-  </p>
-  <div className="mt-6">
-    <span className="inline-block bg-blue-600 px-4 py-2 rounded-lg text-sm font-semibold">
-      100% Human-Augmented AI · No Guessing · Just Results
-    </span>
-  </div>
-</section>
-
+      
 {/* Testimonials */}
 <section className="w-full bg-black py-16 px-4">
   <h2 className="text-3xl font-bold text-center text-white mb-10">🚀 Client Wins with AVA</h2>
