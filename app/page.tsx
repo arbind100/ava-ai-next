@@ -19,7 +19,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Plans */}
-      <main className="flex min-h-screen flex-col items-center justify-center bg-black text-white px-4 py-12">
+      <main className="flex flex-col items-center justify-center bg-black text-white px-4 py-12">
         <h1 className="text-4xl font-bold mb-10 text-center">⚡ AVA AI Services</h1>
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
@@ -68,6 +68,40 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Testimonials Section */}
+      <section className="bg-gray-900 text-white py-16 px-4 text-center">
+        <h2 className="text-3xl font-bold mb-8">💬 What Our Users Say</h2>
+        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+          <div className="bg-zinc-800 p-6 rounded-xl shadow-md">
+            <p className="italic">“AVA gave me an AI-powered growth plan that outperformed my old agency.”</p>
+            <p className="mt-4 font-semibold text-blue-400">— Daniel, Creator Economy Coach</p>
+          </div>
+          <div className="bg-zinc-800 p-6 rounded-xl shadow-md">
+            <p className="italic">“I didn’t know what I needed until AVA showed me. It’s scary smart.”</p>
+            <p className="mt-4 font-semibold text-blue-400">— Maya, Founder of SpeakEasy</p>
+          </div>
+        </div>
+      </section>
+
+      {/* What AVA Can Do */}
+      <section className="bg-black text-white py-20 px-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">🔮 What Can AVA Actually Do?</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
+          <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-700">
+            <h3 className="text-xl font-semibold mb-2">Brand Strategy OS</h3>
+            <p className="text-sm text-gray-400">AVA analyzes your identity, market, and audience to give you a full mental OS of your brand.</p>
+          </div>
+          <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-700">
+            <h3 className="text-xl font-semibold mb-2">Content & Distribution Engine</h3>
+            <p className="text-sm text-gray-400">Daily content ideas, story-based hooks, and the distribution timing AI — all built-in.</p>
+          </div>
+          <div className="bg-zinc-900 p-6 rounded-xl border border-zinc-700">
+            <h3 className="text-xl font-semibold mb-2">Customer Psychology Toolkit</h3>
+            <p className="text-sm text-gray-400">AVA shows you the dreams, fears, logic, and decision-maps of your best-fit customers.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
