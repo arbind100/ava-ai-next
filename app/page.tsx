@@ -77,6 +77,7 @@ export default function Home() {
           </button>
         </div>
       </section>
+          </main>
       
 {/* Testimonials */}
 <section className="w-full bg-black py-16 px-4">
